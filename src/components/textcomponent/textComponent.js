@@ -12,7 +12,7 @@ import './textComponent.css'
 
      render(){
          return (
-            <div>
+            <div className='container'>
                 <input 
                 className='input1' 
                 onChange={(e)=>{
@@ -34,6 +34,7 @@ import './textComponent.css'
                 
                 
                 >Reset</button><br/>
+                
                <h3> {this.state.textInput}</h3>
         </div>
          )
