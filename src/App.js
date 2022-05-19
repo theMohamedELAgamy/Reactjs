@@ -7,12 +7,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AboutUs from './components/aboutuscomponent'
 import Error from './components/errorcomponent'
 import Student from './components/studentcomponent/studentcomponent'
-
+import CoverComponent from './components/albumscomponents/covercomponent'
 import React, { Component } from 'react';
 import StudentTable from './components/studenttableComponent/studenttablecomponent';
 import studentsList from './students.json'
 import StudentsDetails from './components/studentDetailcomponent/studentdetails'
-
+import ArtistComponent from './components/albumscomponents/artistcomponent';
+import ArtistDetailsComponent from './components/albumscomponents/ArtistDetailsComponent'
 class App extends Component{
     constructor(){
       super();
@@ -39,18 +40,24 @@ class App extends Component{
     return(
       <BrowserRouter>
              <center>
-      
+            
+            <Routes>
+                <Route path="" element={<CoverComponent/>}/>
+                <Route path="/artists" element={<ArtistComponent/>}/>
+                <Route path="/artists/:id" element={<ArtistDetailsComponent/>}/>
 
+            </Routes> 
+{/* 
               <NavBar/>
               <Routes>
-                  {/* <Route path="" element={<Home/>}/>
-                  <Route path="/Students" element={<Users/>}/> */}
+                  <Route path="" element={<Home/>}/>
+                  <Route path="/Students" element={<Users/>}/>
                   <Route path="/sudents/details/:id" element={<StudentsDetails/>}/>
                   <Route path="/home" element={<div><Student onKeyChange={this.addRecord}/><StudentTable studentsList={this.state.AllStudents}/></div>}/>
                   <Route path="/aboutUs" element={<AboutUs/>}/>
                   <Route path="/error" element={<Error/>}/>
                   <Route path="*" element={<Error/>}/>
-              </Routes>
+              </Routes> */}
               {/* <StudentTable  addedRecord={}/> */}
              </center>
     
